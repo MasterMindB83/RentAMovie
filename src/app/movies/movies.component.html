@@ -1,0 +1,34 @@
+<div>
+  <h1>Movies</h1>
+  <table>
+    <tr>
+      <td>Name:<input type="text" [(ngModel)]="name"></td>
+      <td>Genre:<input type="text" [(ngModel)]="genre"></td>
+      <td>Year:<input type="text" [(ngModel)]="year"></td>
+      <td><button (click)="refreshData()">Search</button></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td class="header">Id</td>
+      <td class="header">Name</td>
+      <td class="header">Genre</td>
+      <td class="header">Year</td>
+      <td class="header">Description</td>
+      <td class="header">Rented by</td>
+      <td class="header">Date rented</td>
+    </tr>
+    <tr *ngFor="let movie of movies">
+      <td class="padding-16 rows rows-first">{{movie.id}}</td>
+      <td class="padding-16 rows">{{movie.name}}</td>
+      <td class="padding-16 rows">{{movie.genre}}</td>
+      <td class="padding-16 rows">{{movie.year}}</td>
+      <td class="padding-16 rows">{{movie.description}}</td>
+      <td class="padding-16 rows">{{movie.rented_by}}</td>
+      <td class="padding-16 rows">{{movie.date_rented| date : 'dd.MM.yyyy'}}</td>
+      <td><button routerLink="rentmovie/{{movie.id}}">{{movie.rented_by==null? 'Rent' :'Return'}}</button></td>
+      <td><button routerLink='editmovie/{{movie.id}}' >Edit</button></td>
+      <td><button (click)="deleteMovie(movie.id)">Delete</button></td>
+    </tr>
+  </table>
+</div>

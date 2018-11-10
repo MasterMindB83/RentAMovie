@@ -1,0 +1,17 @@
+<div>
+  <h1>Users</h1>
+  <table>
+    <tr>
+      <td class="header">Id</td>
+      <td class="header">Username</td>
+      <td class="header">Name</td>
+    </tr> 
+    <tr *ngFor="let user of users">
+      <td class="padding-16 rows">{{user.id}}</td>
+      <td class="padding-16 rows">{{user.username}}</td>
+      <td class="padding-16 rows">{{user.name}}</td>
+      <td class="padding-16 rows"><button routerLink="/edituser/{{user.id}}">Edit</button></td>
+      <td class="padding-16 rows"><button (click)="deleteUser(user.id)">Delete</button></td>
+    </tr>
+  </table>
+</div>

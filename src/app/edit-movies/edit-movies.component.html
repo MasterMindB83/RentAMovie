@@ -1,0 +1,29 @@
+
+<div> 
+  <table>
+      <tr>
+        <td>Id: </td>
+          <td>{{id}}</td>
+      </tr>
+    <tr>
+      <td>Name: </td>
+        <td><input [(ngModel)]="name" class="width"></td>
+    </tr>
+    <tr>
+        <td>Genre: </td>
+        <td><input [(ngModel)]="genre" class="width"></td>
+    </tr>
+    <tr>
+         <td>Year:</td>
+         <td><input [(ngModel)]="year" class="width"></td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td><textarea [(ngModel)]="description" class="description"></textarea></td>
+    </tr>
+  </table>
+  <button (click)="save()">Save</button>
+  <button (click)="delete()">Delete</button>
+</div>
+<div>
+  
